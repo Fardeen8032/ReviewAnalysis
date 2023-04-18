@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phrase level sentiment analysis</title>
+    <!-- Google Fonts -->
+    <link href="{{ url_for('static', filename='css/Login.css') }}" rel="stylesheet">
+
+  </head>
+  <body>
+    <div class="login-card">
+        {% if error %}
+          <p style="color: red;">{{ error }}</p>
+        {% endif %}
+
+        <h2>Login</h2>
+        <h3>Enter your credentials</h3>
+        <form action = "/Login" method ="post" class="login-form">
+          <div class="username">
+            <input
+              name = "username"
+              spellcheck="false"
+              class="control"
+              type="text"
+              placeholder="Username"
+            />
+
+          </div>
+
+
+          <input
+            name = "password"
+            spellcheck="false"
+            class="control"
+            id="password"
+            type="password"
+            placeholder="Password"
+          />
+          <button  class="control" type="submit">LOGIN</button>
+        </form>
+      </div>
+
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>review analysis</title>
+
+    <link href="{{ url_for('static', filename='css/Home.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+        <div class="logo">
+            <span>OpinionMeter</span>
+        </div>
+    </header>
+    <main>
+        <div class="content-left">
+            <h1>Review</h1>
+            <h2>Classification</h2>
+            <p>Unlocking insights from customer reviews: Advanced analysis for data-driven decisions.</p>
+            <div class="btn">
+                <form action="{{ url_for('Phrase') }}" method="get">
+                    <button class="cta">sentiment</button>
+                </form>
+                <form action="{{ url_for('Spam') }}" method="get">
+                    <button class="cta">spam</button>
+                </form>
+            </div>
+
+
+        </div>
+        <div class="content-right">
+            <img src="static\img2.png" alt="" class="hero-img"/>
+
+        </div>
+    </main>
+
+
+  </body>
+</html>

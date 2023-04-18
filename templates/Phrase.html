@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phrase level sentiment analysis</title>
+    <!-- Google Fonts -->
+
+    <link href="{{ url_for('static', filename='css/Phrase.css') }}" rel="stylesheet">
+
+    <!-- Stylesheet -->
+
+  </head>
+  <body>
+
+    <div class="card">
+
+      <h2>Sentiment analysis of tweets</h2><br>
+
+      <form action = "/dashboard" method = "post" class="form">
+        <div class="Name">
+          <input
+            name="name"
+            spellcheck="false"
+            class="controlinput"
+            type="text"
+            placeholder="Name"
+            autocomplete="off"
+          />
+
+        </div>
+
+
+        <input
+          name="num"
+          spellcheck="false"
+          autocomplete="off"
+          class="controlinput"
+          id="no"
+          type="text"
+          pattern="[0-9]*"
+          placeholder="Number"
+        />
+        <button class="controlbutton" type="submit">SUBMIT</button>
+      </form>
+    </div>
+  </body>
+
+</html>

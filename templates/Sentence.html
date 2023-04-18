@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.2/circle-progress.min.js"></script>
+    <link href="{{ url_for('static', filename='css/Sentence.css') }}" rel="stylesheet">
+</head>
+<body>
+
+
+
+    <div class="grid-container">
+
+
+        <!-- Header section -->
+        <header class="header"></header>
+
+        <!-- Sidebar section -->
+        <aside class="sidebar">
+            <div class="sidebar-title">
+                <div class="sidebar-brand">
+                    <span>Sentiment</span>
+                </div>
+            </div>
+            <div class="sidebar-list">
+            <a href="/Home">
+                <div class="sidebar-list-item">
+                    <span>Home</span>
+                </div>
+            </a>
+            </div>
+        </aside>
+
+
+
+
+
+        <!-- maincard section -->
+        <main class="mainbar">
+            <div class="maintitle">
+                <p>Dashboard</p>
+            </div>
+            <div class="maincard">
+
+                <div class="card">
+                   <div class="Positive">
+                       <div class="Positive-value"></div>
+                   </div>
+                   <div class="text">POSITIVE</div>
+                </div>
+
+
+                <div class="card">
+                    <div class="Negative">
+                        <div class="Negative-value"></div>
+                    </div>
+                       <div class="text">NEGATIVE</div>
+                </div>
+
+                <div class="card">
+                    <div class="Neutral">
+                        <div class="Neutral-value"></div>
+                    </div>
+                       <div class="text">NEUTRAL</div>
+                </div>
+
+
+            </div>
+
+            <!-- Line chart -->
+            <div class="charts">
+                <div class="chart">
+                    <h2>No of likes on user tweets</h2>
+                    <canvas id="linechart"></canvas>
+                </div>
+
+                    <div class="card">
+                        <div class="Total">
+
+                              <div class="Total-value"></div>
+
+                        </div>
+                           <div class="text">TOTAL</div>
+                    </div>
+
+            </div>
+
+            <!-- Table section -->
+            <div class="tables">
+                <div class="table">
+                    <div class="tablesearch">
+                        <input type="text"
+                               name="text"
+                               placeholder="search"
+                               id="myInput"
+                               onkeyup="SearchTable()"
+                            >
+                        <label for="search">
+                            <span class="material-icons-outlined">
+                                search
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="Tables">
+                <div class="Table">
+                    <h2>No of tweets</h2>
+                </div>
+                <div class="table-container">
+                    <div class="table-items">
+                        <table class="item" id="myTable">
+                            <thead>
+
+                                <th>Username</th>
+                                <th>Tweets</th>
+                                <th>Dateandtime</th>
+                            </thead>
+                            <tbody>
+                            {% for row in records %}
+                                <tr>
+                                    <td>{{ row[0] }}</td>
+                                    <td>{{ row[1] }}</td>
+                                    <td>{{ row[2] }}</td>
+                                </tr>
+                            {% endfor %}
+
+
+
+
+
+
+
+
+
+                            </tbody>
+
+                        </table>
+                    </div>
+                 </div>
+            </div>
+
+
+        </main>
+    </div>
+    <script type = "text/javascript">
+        Totals = '{{Total}}';
+        Positives = '{{Positive}}';
+        Negatives = '{{Negative}}';
+        Neutrals = '{{Neutral}}';
+
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>

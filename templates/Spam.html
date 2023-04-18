@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Review analysis</title>
+
+    <link href="{{ url_for('static', filename='css/Spam.css') }}" rel="stylesheet">
+
+  </head>
+  <body>
+    <div class="spam-card">
+
+      <h2>Spam Detection</h2>
+      <h3>Enter your text</h3>
+      <form action = "{{ url_for('Spam')}}" method = "post" class="spam-form">
+        <div class="spamname">
+          <input
+          name = "text"
+          spellcheck="false"
+              class="control"
+              type="text"
+              placeholder="name"
+              autocomplete="off"
+              />
+
+          </div>
+          <div class="Text">
+            <input
+            name = "Text"
+            spellcheck="false"
+            class="control"
+            type="text"
+            placeholder="Text"
+            autocomplete="off"
+            />
+
+          </div>
+
+
+          <button class="control" type="submit">SUBMIT</button>
+        </form>
+        <div>
+          {{ prediction }}
+        </div>
+      </div>
+
+  </body>
+  </html>
